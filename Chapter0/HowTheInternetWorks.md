@@ -248,3 +248,98 @@ Client → Router → Router → Server
 * ISPs = Cities
 
 ---
+
+
+# 🌍 How Data Travels Between Countries — Short Notes
+
+---
+
+## 📌 1. Global Infrastructure
+
+* Internet is built using **fiber optic cables**
+* Types:
+
+  * Land cables (underground)
+  * Submarine cables (under oceans)
+
+✔️ These cables connect continents (India ↔ US)
+
+---
+
+## 📌 2. Data Transmission
+
+* Data travels as **light signals (lasers)** inside fiber cables
+* Advantages:
+
+  * Very fast
+  * Long-distance transmission
+  * Low signal loss
+
+---
+
+## 📌 3. Network Structure
+
+```id="1b5b7f"
+User → ISP → Backbone Network → ISP → Receiver
+```
+
+* **ISP** → Local internet provider
+* **Backbone Network** → Global high-capacity networks connecting countries
+
+---
+
+## 📌 4. Role of Routers
+
+* Routers act as **traffic managers**
+* They decide the best path for data
+
+### Uses:
+
+* Routing tables
+* Protocols like **BGP (Border Gateway Protocol)**
+
+---
+
+## 📌 5. Path Selection
+
+* Data does NOT follow a fixed path
+* It dynamically chooses:
+
+  * Fastest route
+  * Available route
+  * Least congested path
+
+✔️ If one path fails → another is used
+
+---
+
+## 📌 6. Step-by-Step Flow (India → US)
+
+1. Data sent from your device
+2. Goes to your ISP (India)
+3. Forwarded to backbone network
+4. Travels via submarine cable
+5. Reaches US network
+6. Goes to receiver’s ISP
+7. Delivered to destination
+
+---
+
+## 📌 7. Important Fact
+
+* 95%+ of international data travels via:
+  👉 **Submarine fiber optic cables**
+
+* Satellites are rarely used (higher latency)
+
+---
+
+
+## 📌 9. Mental Model
+
+* Cables = Highways
+* Routers = Google Maps
+* Packets = Cars
+* Submarine cables = Ocean bridges
+
+
