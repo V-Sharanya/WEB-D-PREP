@@ -97,11 +97,6 @@ TLS works in **two main phases**:
 
 ---
 
-### ⚠️ Correction to your note:
-
-> ❌ “A shared public key is used for encryption”
-
-✔️ Correct version:
 
 * Public key is used **only during handshake**
 * Actual data encryption uses **symmetric session key**
@@ -225,8 +220,6 @@ Once handshake is complete:
 
 ---
 
-# 🧠 Advanced Insights (Important for Interviews)
-
 ### 🔸 Perfect Forward Secrecy (PFS)
 
 * Uses ephemeral keys (Diffie-Hellman)
@@ -258,40 +251,4 @@ TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 
 ---
 
-# ❌ Common Mistakes (Fixing Your Notes)
 
-| Your Point                      | Correction                                              |
-| ------------------------------- | ------------------------------------------------------- |
-| Public key encrypts all data    | ❌ Only used in handshake                                |
-| Shared public key               | ❌ Not shared; server provides its public key            |
-| MAC generated only in handshake | ❌ Used during data transfer too                         |
-| Certificate enables HTTPS       | ✔️ But TLS protocol + certificate together enable HTTPS |
-
----
-
-# 🧩 Final Summary
-
-TLS works as:
-
-1. **Handshake Phase**
-
-   * Authenticate server
-   * Exchange keys securely (asymmetric encryption)
-
-2. **Encryption Phase**
-
-   * Secure communication using symmetric encryption
-
-3. **Security Guarantees**
-
-   * Authentication (certificate)
-   * Encryption (session key)
-   * Integrity (MAC)
-
----
-
-If you want next-level depth, I can:
-
-* Draw a **diagram of TLS handshake**
-* Compare **TLS 1.2 vs TLS 1.3**
-* Or connect this with **DNS + HTTP full flow (end-to-end internet request)**
