@@ -5,157 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semantic Blog Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Semantic Blog Website</h1>
-        <nav>
-            <ul>
+    <header class="bg-teal-700 sticky top-0 w-full">
+        <h1
+            class="w-full h-[10vh] text-white text-4xl font-bold text-center  font-serif flex justify-center items-center">
+            Semantic Blog Website</h1>
+        <nav class="w-full h-[3vh]">
+            <ul class="flex text-white float-right gap-3 underline pr-4 justify-center shadow-md">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            
+
         </nav>
     </header>
-    <hr/>
-    <br/>
-    <main>
-        <aside style="float: left; width: 250px; height: 150vh;">
-            <ul>Recent Posts
-                <li>Stay on the Bus</li>
-                <li>The Power of NO</li>
-            </ul>
-            <ul>Categories
-                <li>Motivational</li>
-            </ul>
+    <main class="flex w-full">
+        <aside class="bg-teal-50 w-[15vw] p-3 hidden md:block">
+            <ol class="text-bold m-3">Contents
+                <ul class="pl-3">Top Articles
+                    <li class="pl-3">Stay on the Bus</li>
+                    <li class="pl-3">The Power of NO</li>
+                </ul>
+                <ul class="pl-3">
+                    <li>Table</li>
+                    <li>Registration Form</li>
+                </ul>
+            </ol>
         </aside>
-        <section>
-            <article>
-                <h2><b>“Stay on the Bus”</b></h2>
-                <h4><I>By: XYZ</I>
-                    <I>Date: 24/03/2026</I>
-                </h4>
-                <p>
-                    Minkkinen paused. He looked out at the students and asked, “What to do?”
+        <section class="p-5 w-[85vw] mx-auto gap-4">
+            <h3 class="text-bold text-xl mb-1 ">Top Articles</h3>
+            <section class="flex justify-center ">
+                <article class="flex flex-1 shadow-md rounded-xl hover:scale-105 transition m-1 p-3 bg-teal-500 text-white flex-col justify-center items-center">
+                    <h2 class="text-xl"><b>“Stay on the Bus”</b></h2>
+                    <h4 class="pl-3 mb-2"><I>By: XYZ</I>
+                    </h4>
+                    <p>
+                        Minkkinen paused. He looked out at the students and asked, “What to do?”
+                        
+                        “It’s simple,” he said. “Stay on the bus. Stay on the f*cking bus. Because if you do, in time,
+                        you
+                        will begin to see a difference.”
+                        <br />  
+                        The term “staying on the bus” is a metaphor used to describe the idea of perseverance and determination. It was popularized by James Clear in his book Atomic Habits, and it refers to the idea of sticking to your goals and not giving up, even when faced with challenges and difficulties.
+
+                     <br/>
+                        “Why? Because you stayed on the bus.”
+                    </p>
+                    <a href="#" class="underline"> Read More</a>
+                    <img src="stay-on-the-bus-700x467.jpg" alt="bus" class="mt-2 w-[30vw] h-[40vh]" />
                     <br />
-                    “It’s simple,” he said. “Stay on the bus. Stay on the f*cking bus. Because if you do, in time, you
-                    will begin to see a difference.”
+                    
+                </article>
+                <article class="flex flex-1 shadow-md rounded-xl hover:scale-105 transition m-1 p-3 bg-teal-500 text-white flex-col justify-center items-center">
+                    <h2 class="text-xl"><b>“The Power of NO”</b></h2>
+                    <h4 class="pl-3 mb-2"><I>By: XYZ</I>
+                    </h4>
+                    <p>
+                        More effort is wasted doing things that don't matter than is wasted doing things inefficiently.
+                        And
+                        if that is the case, elimination is a more useful skill than optimization.
+                        <br />
+                    I am reminded of the famous Peter Drucker quote, “There is nothing so useless as doing efficiently
+                    that which should not be done at all.”
+                    </p>
+                    <a href="#" class="underline"> Read More</a>
+                    <img src="no.jpeg" alt="no" class="mt-2 w-[30vw] h-[50vh]" />
                     <br />
-                    “The buses that move out of Helsinki stay on the same line, but only for a while—maybe a kilometer
-                    or two. Then they begin to separate, each number heading off to its own unique destination. Bus 33
-                    suddenly goes north. Bus 19 southwest. For a time maybe 21 and 71 dovetail one another, but soon
-                    they split off as well. Irving Penn is headed elsewhere.”
-                    <br />
-                    “It’s the separation that makes all the difference,” Minkkinen said. “And once you start to see that
-                    difference in your work from the work you so admire—that’s why you chose that platform after
-                    all—it’s time to look for your breakthrough. Suddenly your work starts to get noticed. Now you are
-                    working more on your own, making more of the difference between your work and what influenced it.
-                    Your vision takes off. And as the years mount up and your work begins to pile up, it won’t be long
-                    before the critics become very intrigued, not just by what separates your work from a Sally Mann or
-                    a Ralph Gibson, but by what you did when you first got started!”
-                    <br />
-                    “You regain the whole bus route in fact. The vintage prints made twenty years ago are suddenly
-                    re-evaluated and, for what it is worth, start selling at a premium. At the end of the line—where the
-                    bus comes to rest and the driver can get out for a smoke or, better yet, a cup of coffee—that’s when
-                    the work is done. It could be the end of your career as an artist or the end of your life for that
-                    matter, but your total output is now all there before you, the early (so-called) imitations, the
-                    breakthroughs, the peaks and valleys, the closing masterpieces, all with the stamp of your unique
-                    vision.”
-                    <br />
-                    “Why? Because you stayed on the bus.”
-                </p>
-                <img src="stay-on-the-bus-700x467.jpg" alt="bus" width="400px" height="200px" />
+                    
+                </article>
+            </section>
+            <h3 class="text-bold-800 text-xl mb-1 mt-5">Table</h3>
+            <table  class="w-full rounded-xl shadow-md border-2 border-black mt-1">
+                <tr class="border-2 border-black">
+                    <th class="border-2 border-black">Article Title</th>
+                    <th class="border-2 border-black">Views</th>
+                    <th class="border-2 border-black">Date</th>
+                </tr>
+                <tr>
+                    <td class="border-2 border-black">Stay on the Bus</td>
+                    <td class="border-2 border-black">14.5 Million Reads</td>
+                    <td class="border-2 border-black">24th March, 2026</td>
+                </tr>
+                <tr>
+                    <td class="border-2 border-black">The Power of NO</td>
+                    <td class="border-2 border-black">14 Million Reads</td>
+                    <td class="border-2 border-black">24th March, 2026</td>
+                </tr>
+            </table>
+            <form action="" method="get">
+                <h3 class="text-bold-800 text-xl mb-1 mt-10"> Registration Form</h3>
+                <label for="name">Name</label>
+                <input class="w-full p-2 border rounded mb-2" placeholder="Enter your Name" name="name" type="text" required>
                 <br />
-                <a href="#"> Read More</a>
-            </article>
-            <hr />
-            <article>
-                <h2><b>“The Power of NO”</b></h2>
-                <h4><I>By: XYZ</I>
-                    <I>Date: 24/03/2026</I>
-                </h4>
-                <p>
-                    More effort is wasted doing things that don't matter than is wasted doing things inefficiently. And
-                    if that is the case, elimination is a more useful skill than optimization.
-                    <br />
-                    <pre>I am reminded of the famous Peter Drucker quote, “There is nothing so useless as doing efficiently
-                    that which should not be done at all.”</pre>
+
+                <label for="email">Email</label>
+                <input class="w-full p-2 border rounded mb-2" placeholder="Enter your Email" name="name" type="email" required>
+                <br />
+
+                <label for="msg">Message</label>
+                <textarea class="w-full p-2 border rounded mb-2"  placeholder="Enter your Message"></textarea>
+                <br />
+
+                <label class="flex" for="gender">Gender</label>
+                <input name="gender" type="radio" value="male">Male
+                <input name="gender" type="radio" value="female">Female<br />
+                <br />
+
+                <label class="flex" for="interests">Interests</label>
+                <label><input type="checkbox" name="Motivational" required>Motivational</label>
+                <label><input type="checkbox" name="Normal" required>Normal</label>
+                <label><input type="checkbox" name="Geopolitical" required>Geopolitical</label>
+                <br />
+
+                <label for="country">Country</label>
+                <select name="country">
+                    <option value="india">India</option>
+                    <option value="nepal"> Nepal</option>
+                    <option value="srilanka">Sri Lanka</option>
+                </select>
+                <br />
 
 
-                </p>
-                <img src="no.jpeg" alt="no" width="400px" height="200px" />
-                <br />
-                <a href="#"> Read More</a>
-            </article>
-            <hr/>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+
+            </form>
         </section>
 
 
-        <table border="1">
-            <tr>
-                <th>Article Title</th>
-                <th>Views</th>
-                <th>Date</th>
-            </tr>
-            <tr>
-                <td>Stay on the Bus</td>
-                <td>14.5 Million Reads</td>
-                <td>24th March, 2026</td>
-            </tr>
-            <tr>
-                <td>The Power of NO</td>
-                <td>14 Million Reads</td>
-                <td>24th March, 2026</td>
-            </tr>
-        </table>
-        <br/>
-        <hr/>
-        <br/>
-        <form action="" method="get">
-            <h3> Registration Form</h3>
-            <label for="name">Name</label>
-            <input placeholder="Enter your Name" name="nale" type="text" required>
-            <br/>
-
-            <label for="email">Email</label>
-            <input placeholder="Enter your Email" name="name" type="email" required>
-            <br/>
-
-            <label for="msg">Message</label>
-            <textarea placeholder="Enter your Message" ></textarea>
-            <br/>
-
-            <label for="gender">Gender</label>
-            <input name="gender" type="radio" value="male">Male<br/>
-            <input name="gender" type="radio" value="female">Female<br/>
-            <br/>
-
-            <label for="interests">Interests</label>
-            <label><input type="checkbox" name="Motivational" required>Motivational</label>
-            <label><input type="checkbox" name="Normal" required>Normal</label>
-            <label><input type="checkbox" name="Geopolitical" required>Geopolitical</label>
-            <br/>
-
-            <label for="country">Country</label>
-            <select name="country">
-                <option value="india">India</option>
-                <option value="nepal"> Nepal</option>
-                <option value="srilanka">Sri Lanka</option>
-            </select>
-            <br/>
-
-            
-            <button>Submit</button>
-
-        </form>
     </main>
-    <hr/>
-    <br/>
-    <footer>
+    <hr />
+    <br />
+    <footer class="text-center p-4 bg-white shadow-md mt-4">
         <pre>&copy Copyrights reserved to <a href="#">V Sharanya</a></pre>
     </footer>
-    
+
 </body>
+
 </html>

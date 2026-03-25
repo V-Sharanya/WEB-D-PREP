@@ -292,5 +292,22 @@ hover:bg-black hover:text-white
 * `z-*`
 
 ---
+🔥 What Tailwind Reset Does
 
+It removes browser default styles like:
+
+❌ Before (browser default styles)
+<ul> → bullets
+<h1> → big bold text
+<a> → blue + underline
+<table> → borders
+<body> → margins
+
+🧠 Key Concept (VERY IMPORTANT)
+
+👉 Tailwind assumes:
+
+“You will style EVERYTHING yourself”
+
+So it removes all default styling.
 ---
