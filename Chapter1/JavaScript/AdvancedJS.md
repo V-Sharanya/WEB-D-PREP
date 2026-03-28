@@ -62,3 +62,46 @@ async function fetchPosts() {
   }
 }
 fetchPosts();
+
+🔍 Difference: =, ==, ===
+1. = (Assignment)
+
+Used to assign value
+
+let x = 5;
+
+👉 “Put 5 into x”
+
+2. == (Loose Equality)
+
+Compares values only (does type conversion)
+
+5 == "5"   // true ✅
+
+👉 JS converts "5" → number → compares
+
+⚠️ This is called type coercion (can cause bugs)
+
+3. === (Strict Equality) ✅ IMPORTANT
+
+Compares:
+
+value ✔️
+type ✔️
+5 === "5"   // false ❌
+
+👉 number ≠ string → false
+
+🧠 Rule (VERY IMPORTANT)
+
+👉 Always prefer:
+
+=== and !==
+
+❌ Avoid:
+
+== and !=
+
+Because:
+
+== can behave unpredictably

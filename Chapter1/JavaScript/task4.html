@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript tasks</title>
+</head>
+<body>
+    <h1 id="title">Hello</h1>
+    <button id="btn">Change Text</button>
+    <p id="text">I am learning JS</p>
+    <button id="colorBtn">Change Color</button>
+    <h2 id="status">OFF</h2>
+    <button id="toggleBtn">Toggle</button>
+    <h1 id="heading">Original Text</h1>
+    <button id="btn1">Click Me</button>
+    <p id="para">JavaScript is fun</p>
+    <button id="btn2">Update</button>
+    <h2 id="message">Hello</h2>
+    <button id="btn3">Change</button>
+    <h3 id="stat">Not Clicked</h3>
+    <button id="btn4">Click</button>
+    <h1 id="countText">0</h1>
+    <button id="btn5">Click Me</button>
+    
+<script>
+    let elem = document.getElementById('btn');
+    let para = document.getElementById('title');
+    elem.addEventListener('click',function(){
+        para.innerHTML = "Welcome to Javascript";
+    })
+    let element = document.getElementById('colorBtn');
+    let text = document.getElementById('text');
+    element.addEventListener('click',function(){
+        text.style.color = "red";
+        text.style.backgroundColor = "yellow";
+    })
+    let change = document.getElementById('toggleBtn');
+    let status = document.getElementById('status');
+    change.addEventListener('click',function(){
+        if (status.innerHTML === "OFF"){
+            status.innerHTML = "ON";
+        }
+        else{
+            status.innerHTML = "OFF";
+        }
+    })
+    let btn1 = document.getElementById('btn1');
+    let heading = document.getElementById('heading');
+
+    btn1.addEventListener('click',function(){
+        heading.innerHTML = "You did it!";
+    })
+
+    let btn2 = document.getElementById('btn2');
+    let head = document.getElementById('para');
+
+    btn2.addEventListener('click',function(){
+        head.innerHTML = "JavaScript is powerful";
+    })
+
+    let btn3 = document.getElementById('btn3');
+    let message = document.getElementById('message');
+    var name= "Sharanya";
+
+    btn3.addEventListener('click',function(){
+        message.innerHTML = "Hello " + name;
+    })
+
+    let btn4 = document.getElementById('btn4');
+    let msg = document.getElementById('stat');
+
+    btn4.addEventListener('click',function(){
+        msg.innerHTML = "Button was clicked";
+    })
+
+    let btn5 = document.getElementById('btn5');
+    let count = document.getElementById('countText');
+    var cnt = 0;
+
+    btn5.addEventListener('click',function(){
+        cnt+=1;
+        count.innerHTML = cnt;
+    })
+    
+    
+</script>
+</body>
+</html>
