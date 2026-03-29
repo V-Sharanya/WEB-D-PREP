@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-500 to-purple-600 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-4 text-gray-800">Todo List</h1>
+
+        <div class="flex gap-2 mb-3">
+            <input type="text" id="taskInput" placeholder="Enter your task"
+                class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            <button id="addTask"
+                class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition">
+                Add
+            </button>
+        </div>
+
+        <p id="error" class="text-red-500 text-sm mb-2"></p>
+
+        <ul id="taskList" class="space-y-2"></ul>
+    </div>
+
+    <script>
+        let task = document.getElementById('taskInput');
+        let add = document.getElementById('addTask');
+        let list = document.getElementById('taskList');
+        let error = document.getElementById('error');
+
+        add.addEventListener('click', function () {
+            if (task.value.trim() === "") {
+                error.innerText = "Please insert a task.";
+                return;
+            }
+            error.innerText = "";
+
+            let li = document.createElement('li');
+            li.className = "flex items-center justify-between bg-gray-100 px-4 py-2 rounded-lg shadow-sm";
+
+            let span = document.createElement('span');
+            span.innerText = task.value;
+            span.className = "flex-1 text-gray-700";
+
+            let btn = document.createElement('button');
+            btn.innerText = "❌";
+            btn.className = "mx-1";
+
+            let completed = document.createElement('button');
+            completed.innerText = "✅";
+            completed.className = "mx-1";
+
+            let edit = document.createElement('button');
+            edit.innerText = "✏️";
+            edit.className = "mx-1";
+
+            li.appendChild(span);
+            li.appendChild(completed);
+            li.appendChild(edit);
+            li.appendChild(btn);
+
+            list.appendChild(li);
+
+            task.value = "";
+
+            btn.addEventListener('click', function () {
+                li.remove();
+            });
+
+            completed.addEventListener('click', function () {
+                li.style.textDecoration = 'line-through';
+            });
+
+            edit.addEventListener('click', function () {
+                let newTask = prompt("Edit Task:", span.innerText);
+                if (newTask !== null && newTask.trim() !== "") {
+                    span.innerText = newTask;
+                }
+            });
+        });
+
+        task.addEventListener('keypress', function (e) {
+            if (e.key === "Enter") add.click();
+        });
+    </script>
+
+</body>
+</html>
