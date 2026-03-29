@@ -1,0 +1,39 @@
+<!-- Task 10 done in task6.html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+ </head>
+ <body>
+    <style>
+        .active {
+            background: black;
+            color: white;
+        }
+    </style>
+    <textarea id="text"></textarea>
+    <p id="count">0</p>
+    <div id="box">Click Me</div>
+
+
+    <script>
+        let text = document.getElementById('text');
+        let count = document.getElementById('count');
+        let cnt =0;
+        
+        letterCount = () => {
+            let length = text.value.length;
+            count.innerText = length ;
+        }
+        setInterval(letterCount,1000);
+
+        let box = document.getElementById('box')
+        box.addEventListener('click',function(){
+            box.classList.toggle('active');
+
+        })
+    </script>
+ </body>
+ </html>

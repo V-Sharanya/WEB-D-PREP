@@ -65,7 +65,7 @@ Use createElement
 Append to list
 ✅ Task B: Highlight Alternate Items (IMPORTANT 🔥)
 📄 HTML:
-<ul id="list">
+<ul id="items">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
@@ -86,7 +86,7 @@ Item 4
 index % 2 === ?
 ✅ Task C: Remove Last Item
 📄 HTML:
-<ul id="list">
+<ul id="listed">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>

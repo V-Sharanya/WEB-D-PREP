@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+    <input type="text" id="nameInput">
+    <button id="showBtn">Show</button>
+    <h3 id="output"></h3>
+    <h2 id="count">0</h2>
+    <button id="inc">+</button>
+    <button id="dec">-</button><br/><br/>
+    <input type="text" id="itemInput">
+    <button id="addItem">Add</button>
+    <ul id="list"></ul>
+
+    <script>
+        let showBtn = document.getElementById('showBtn');
+        let output = document.getElementById('output');
+        let name = document.getElementById('nameInput');
+        
+
+        showBtn.addEventListener('click',function(){
+            console.log(name.value);
+            let val = name.value.trim();
+            if(val == ""){
+                output.innerText = "Please give a name";
+            }
+            else{
+                output.innerText = "Hello, "+ name.value; 
+            }
+        })
+
+        let count = document.getElementById('count')
+        var cnt = 0;
+        let inc = document.getElementById('inc');
+        let dec = document.getElementById('dec');
+
+        inc.addEventListener('click',function(){
+            cnt += 1;
+            count.innerHTML = cnt;
+
+        })
+        dec.addEventListener('click',function(){
+            cnt -= 1;
+            count.innerHTML = cnt;
+
+        })
+
+        let inp = document.getElementById('itemInput');
+        let add = document.getElementById('addItem');
+        let list = document.getElementById('list');
+
+        add.addEventListener('click',function(){
+            let li = document.createElement('li')
+            let btn = document.createElement('button')
+            li.innerText = inp.value + " ";
+            btn.innerText = "❌";
+            list.appendChild(li);
+            li.appendChild(btn);
+            inp.value = "";
+
+            btn.addEventListener('click',function(){
+                li.remove();
+            })
+
+        })
+        
+    </script>
+</body>
+</html>
