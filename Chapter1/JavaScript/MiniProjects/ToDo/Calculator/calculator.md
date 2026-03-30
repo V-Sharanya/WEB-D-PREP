@@ -49,6 +49,7 @@ Add event to each button
 Append value
 🔧 Example logic:
 display.value += button.innerText;
+
 🟠 Step 3: Clear Button
 
 🎯 Task 2:
