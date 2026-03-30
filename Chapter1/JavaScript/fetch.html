@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch-Example Users</title>
+</head>
+<body>
+
+<button id="loadBtn">Load Users</button>
+<ul id="userList"></ul>
+
+<script>
+    let loadBtn = document.getElementById('loadBtn');
+    let userList = document.getElementById('userList');
+
+    loadBtn.addEventListener('click', async function(){
+
+        // Step 1: Fetch data
+        let response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+        // Step 2: Convert to JSON
+        let data = await response.json();
+
+        // Step 3: Loop through data
+        data.forEach(function(user){
+
+            // Step 4: Create element
+            let li = document.createElement('li');
+
+            // Step 5: Add content
+            li.innerText = user.name;
+
+            // Step 6: Append to DOM
+            userList.appendChild(li);
+        });
+    });
+</script>
+
+</body>
+</html>
