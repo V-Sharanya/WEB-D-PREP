@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+    <!-- 🔹 Title -->
+    <h1 class="text-3xl font-bold text-center mb-6">Notes Explorer</h1>
+
+    <!-- 🔹 Controls Section -->
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-4 mb-6">
+
+        <!-- 🔍 Search -->
+        <input 
+            type="text" 
+            id="search"
+            placeholder="Search notes..."
+            class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+
+        <!-- 🔽 Filter -->
+        <select 
+            id="userFilter"
+            class="p-2 border rounded-lg"
+        >
+            <option value="all">All Users</option>
+            <option value="1">User 1</option>
+            <option value="2">User 2</option>
+            <option value="3">User 3</option>
+            <option value="4">User 4</option>
+        </select>
+
+        <!-- 🔘 Load Button -->
+        <button 
+            id="loadNotes"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+        >
+            Load Notes
+        </button>
+
+    </div>
+
+    <!-- 🔹 Status (Loading / Error) -->
+    <div id="status" class="text-center text-gray-600 mb-4"></div>
+
+    <!-- 🔹 Notes Container -->
+    <div 
+        id="notesContainer"
+        class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4"
+    >
+        <!-- Cards will be inserted here -->
+    </div>
+
+</body>
+</html>
