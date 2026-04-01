@@ -35,7 +35,6 @@
             <option value="4">User 4</option>
         </select>
 
-        <!-- 🔘 Load Button -->
         <button 
             id="loadNotes"
             class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
@@ -45,16 +44,117 @@
 
     </div>
 
-    <!-- 🔹 Status (Loading / Error) -->
     <div id="status" class="text-center text-gray-600 mb-4"></div>
 
-    <!-- 🔹 Notes Container -->
     <div 
         id="notesContainer"
         class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4"
     >
-        <!-- Cards will be inserted here -->
-    </div>
 
+    </div>
+    <script>
+        let loadNotes = document.getElementById('loadNotes');
+        let notes = document.getElementById('notesContainer');
+        let status = document.getElementById('status');
+
+        let allNotes = [];            
+
+        function displayNotes(notesArray){
+            notes.innerHTML = "";
+
+            notesArray.forEach(function(note){
+
+                let card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-lg shadow flex flex-col gap-2";
+
+                let info = document.createElement('div');
+                info.innerHTML = `
+                    <p class="font-semibold">${note.title}</p>
+                    <p class="text-sm text-gray-600">${note.body}</p>
+                `;
+
+                let actions = document.createElement('div');
+                actions.className = "flex justify-between items-center mt-2";
+
+                let star = document.createElement('button');
+                star.innerText = "⭐";
+                star.className = "text-yellow-500";
+
+                let cancel = document.createElement('button');
+                cancel.innerText = "❌";
+                cancel.className = "text-red-500";
+
+                star.addEventListener('click', function(){
+                    card.classList.toggle('bg-yellow-100');
+                });
+
+                cancel.addEventListener('click', function(){
+                    card.remove();
+                });
+
+                actions.appendChild(star);
+                actions.appendChild(cancel);
+
+                card.appendChild(info);
+                card.appendChild(actions);
+
+                notes.appendChild(card);
+            });
+        }
+        async function fetchNotes(){
+            status.innerText = "loading..";
+
+            try{            
+                let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+                let data = await response.json();
+
+                allNotes = data;
+                displayNotes(allNotes);
+            }
+            catch(err){
+                status.innerHTML = "<p class='text-red-500'>Failed to load users</p>";
+            }
+
+            status.innerText = "";
+        }
+
+        let search = document.getElementById('search');
+        search.addEventListener('input',function(){
+            let query = search.value.toLowerCase();
+
+            
+            let filtered = allNotes.filter(note =>
+                note.title.toLowerCase().includes(query) ||
+                note.body.toLowerCase().includes(query)
+            );
+            displayNotes(filtered);
+        })
+
+        loadNotes.addEventListener('click',function(){
+            fetchNotes();
+        })
+
+        function filterNotes(){
+            let userFilter = document.getElementById('userFilter');
+            let value = userFilter.value;
+
+            let filtered;
+
+            if(value === "all"){
+                filtered = allNotes;
+            } else {
+                filtered = allNotes.filter(note =>
+                    note.userId === Number(value)
+                );
+            }
+
+            displayNotes(filtered);
+        }
+        document.getElementById('userFilter').addEventListener('change', filterNotes);
+
+
+        
+    </script>
+    
 </body>
 </html>
