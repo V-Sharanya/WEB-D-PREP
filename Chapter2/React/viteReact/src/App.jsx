@@ -1,10 +1,10 @@
 import { useState } from 'react'
+import Hello  from "./hello"
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <h1>Hello World | V Sharanya</h1>
+    return (
+    // <h1>Hello World | V Sharanya</h1>
+    <Hello/>
   )
 }
 

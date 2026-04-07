@@ -120,3 +120,170 @@ npm create vite@latest
 
 ---
 
+# ⚛️ React Basics & Vite Conventions
+
+## 📌 Returning Elements in React
+
+In React, a component must return **only one parent element**.
+
+### ❌ Invalid
+
+```jsx
+return (
+  <h1>Hello</h1>
+  <p>World</p>
+);
+```
+
+### ✅ Valid (using a wrapper)
+
+```jsx
+return (
+  <div>
+    <h1>Hello</h1>
+    <p>World</p>
+  </div>
+);
+```
+
+### ✅ Valid (using Fragment)
+
+```jsx
+return (
+  <>
+    <h1>Hello</h1>
+    <p>World</p>
+  </>
+);
+```
+
+👉 **Why Fragment (`<> </>`) ?**
+
+* Avoids unnecessary `<div>` in DOM
+* Keeps code clean and optimized
+
+---
+
+## ⚡ Vite + React Naming Conventions
+
+When using Vite with React, follow these rules:
+
+### 1. File Naming
+
+* Use `.jsx` for React components
+
+```
+App.jsx
+Header.jsx
+```
+
+### 2. Component Naming
+
+* Component functions must start with a **capital letter**
+
+### ❌ Wrong
+
+```jsx
+function header() {
+  return <h1>Hello</h1>;
+}
+```
+
+### ✅ Correct
+
+```jsx
+function Header() {
+  return <h1>Hello</h1>;
+}
+```
+
+👉 Reason:
+
+* React treats lowercase as HTML tags
+* Uppercase tells React it's a **custom component**
+
+---
+
+## 🧠 Additional Important Points
+
+### 1. Always Import React (if needed)
+
+In newer setups (like Vite + React 17+), you don’t need:
+
+```jsx
+import React from "react";
+```
+
+---
+
+### 2. Use `export default`
+
+```jsx
+function App() {
+  return <h1>Hello</h1>;
+}
+
+export default App;
+```
+
+---
+
+### 3. Component Structure Best Practice
+
+```jsx
+import Header from "./Header";
+
+function App() {
+  return (
+    <>
+      <Header />
+      <h1>Main App</h1>
+    </>
+  );
+}
+
+export default App;
+```
+
+---
+
+### 4. Use `className` instead of `class`
+
+```jsx
+<div className="container"></div>
+```
+
+---
+
+### 5. Self-closing Tags
+
+```jsx
+<input />
+<img />
+```
+
+---
+
+### 6. Props Example
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+```
+
+---
+
+### 7. Folder Structure (Recommended)
+
+```
+src/
+ ├── components/
+ │    ├── Header.jsx
+ │    └── Footer.jsx
+ ├── App.jsx
+ └── main.jsx
+```
+
+---
+
